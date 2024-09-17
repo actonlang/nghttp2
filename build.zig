@@ -50,7 +50,7 @@ pub fn build(b: *std.Build) void {
     );
     lib.addConfigHeader(config_header);
 
-    const public_header = b.addConfigHeader(
+    const version_header = b.addConfigHeader(
         .{
             .style = .{ .cmake = b.path("lib/includes/nghttp2/nghttp2ver.h.in") },
             .include_path = "nghttp2/nghttp2ver.h",
@@ -59,7 +59,7 @@ pub fn build(b: *std.Build) void {
             .PACKAGE_VERSION = "1.63.0",
         },
     );
-    lib.addConfigHeader(public_header);
+    lib.addConfigHeader(version_header);
 
     //flags.appendSlice(&.{
     //    "-std=c++11",
