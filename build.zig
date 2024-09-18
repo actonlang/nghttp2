@@ -57,13 +57,14 @@ pub fn build(b: *std.Build) void {
         },
         .{
             .PACKAGE_VERSION = "1.63.0",
+            .PACKAGE_VERSION_NUM = 0x013f00,
         },
     );
     lib.addConfigHeader(version_header);
 
-    //flags.appendSlice(&.{
-    //    "-std=c++11",
-    //}) catch unreachable;
+    flags.appendSlice(&.{
+        "-DHAVE_CONFIG_H",
+    }) catch unreachable;
 
     const source_files = [_][]const u8{
         "lib/nghttp2_pq.c",
