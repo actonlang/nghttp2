@@ -95,7 +95,7 @@ pub fn build(b: *std.Build) void {
         "lib/sfparse.c"
     };
 
-    //lib.linkLibC();
+    lib.linkLibC();
     lib.linkLibCpp();
     lib.installHeader(b.path("lib/includes/nghttp2/nghttp2.h"), "nghttp2/nghttp2.h");
     lib.addCSourceFiles(.{
