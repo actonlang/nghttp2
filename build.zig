@@ -16,7 +16,7 @@ pub fn build(b: *std.Build) void {
     });
     lib.addIncludePath(b.path("./lib"));
     lib.addIncludePath(b.path("./lib/includes"));
-    lib.addIncludePath(.{ .cwd_relative = "/usr/include" });
+    //lib.addIncludePath(.{ .cwd_relative = "/usr/include" });
 
             //#define NGHTTP2_NORETURN __attribute__((noreturn))
     const config_header = b.addConfigHeader(
