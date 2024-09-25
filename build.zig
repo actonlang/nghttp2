@@ -61,6 +61,7 @@ pub fn build(b: *std.Build) void {
         },
     );
     lib.addConfigHeader(version_header);
+    lib.installConfigHeader(version_header);
 
     flags.appendSlice(&.{
         "-DHAVE_CONFIG_H",
